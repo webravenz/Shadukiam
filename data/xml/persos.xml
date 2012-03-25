@@ -1,0 +1,13 @@
+<persos>
+
+<perso>
+    <name>Médecin</name>
+    <description>description médecin</description>
+</perso>
+    
+<perso>
+    <name>Artificier</name>
+    <description>description artificier</description>
+</perso>
+
+</persos>
