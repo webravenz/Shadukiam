@@ -14,17 +14,16 @@
 - (void) show {
     
     // init slider
-    sliderPersos = [[Slider alloc] initWithWidth:8 * 120 + 120 height:150];
+    sliderPersos = [[Slider alloc] initWithWidth:3 * 210 height:[Game stageHeight]];
     [self addChild:sliderPersos];
-    sliderPersos.y = 20;
+    sliderPersos.y = 30;
     
     // init fiches
-    for(int i = 0; i < 9; i++) {
-        SPQuad *quad = [SPQuad quadWithWidth:100 height:150 color:0xCCCCCC];
-        [sliderPersos addChild:quad];
-        quad.x = (i * 120) + 20;
-        NSLog(@"Sale pute");
-        [quad addEventListener:@selector(onTouchPerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    for(int i = 1; i < 4; i++) {
+        SPImage *ficheMini = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_mini_%d.png", i]];
+        [sliderPersos addChild:ficheMini];
+        ficheMini.x = (i * 210) - 170;
+        [ficheMini addEventListener:@selector(onTouchPerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     }
     
     // init masque background
