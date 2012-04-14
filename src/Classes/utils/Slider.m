@@ -55,7 +55,7 @@
     
     if(diffX != 0)
         speed = diffX;
-    else if(speed > 0.5)
+    else if(speed > 0.5 || speed < -0.5)
         speed /= 1.2;
     else
         speed = 0;

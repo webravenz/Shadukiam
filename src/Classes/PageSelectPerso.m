@@ -56,12 +56,14 @@
     
 }
 
+// affichage d'une fiche perso en grand
 - (void) showPerso {
     
     [self addChild:backgroundMask];
     
     // init fiche
-    persoActive = [[SPQuad alloc] initWithWidth:300 height:200 color:0xFFFFFF];
+    persoActive = [[FichePerso alloc] init ];
+    [persoActive initWithPerso:2];
     
     persoActive.x = ([Game stageWidth] - persoActive.width) / 2;
     persoActive.y = ([Game stageHeight] - persoActive.height) / 2 + 30;
@@ -80,12 +82,13 @@
     [self.stage.juggler addObject:tweenBack];
     
     // close
-    [persoActive addEventListener:@selector(closePerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [backgroundMask addEventListener:@selector(closePerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     
 }
 
+// ferme fiche perso
 - (void) closePerso:(SPTouchEvent*)event {
-    [persoActive removeEventListener:@selector(closePerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [backgroundMask removeEventListener:@selector(closePerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     
     // tween fiche et background
     SPTween *tweenFiche = [SPTween tweenWithTarget:persoActive time:0.5f transition:SP_TRANSITION_EASE_OUT];
@@ -115,12 +118,12 @@
 }
 
 
-- (void)dealloc
+- (void)finalize
 {
     // event listeners should always be removed to avoid memory leaks!
     [self removeChild:backgroundMask];
     backgroundMask = nil;
-    [super dealloc];
+    [super finalize];
 }
 
 @end

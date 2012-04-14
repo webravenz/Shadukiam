@@ -41,6 +41,7 @@
 		8DB69FBE151F3D4700163271 /* fond@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69FB3151F3D4700163271 /* fond@2x.jpg */; };
 		8DB69FBF151F3D4700163271 /* fond_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69FB4151F3D4700163271 /* fond_menu@2x.png */; };
 		8DB69FC0151F3D4700163271 /* fond_titre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69FB5151F3D4700163271 /* fond_titre@2x.png */; };
+		8DEE9FD31534BD9F004B305F /* FichePerso.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE9FD21534BD9F004B305F /* FichePerso.m */; };
 		DE1FBDFD14F831A300E86642 /* SPResizeEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1FBDFC14F831A300E86642 /* SPResizeEvent.m */; };
 		DE3F093811B7B9DC009D4DB0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
 		DE3F093A11B7B9DC009D4DB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
@@ -139,6 +140,8 @@
 		8DB69FB3151F3D4700163271 /* fond@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fond@2x.jpg"; sourceTree = "<group>"; };
 		8DB69FB4151F3D4700163271 /* fond_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fond_menu@2x.png"; sourceTree = "<group>"; };
 		8DB69FB5151F3D4700163271 /* fond_titre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fond_titre@2x.png"; sourceTree = "<group>"; };
+		8DEE9FD11534BD9F004B305F /* FichePerso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FichePerso.h; path = display/FichePerso.h; sourceTree = "<group>"; };
+		8DEE9FD21534BD9F004B305F /* FichePerso.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FichePerso.m; path = display/FichePerso.m; sourceTree = "<group>"; };
 		DE1FBDFB14F831A300E86642 /* SPResizeEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResizeEvent.h; sourceTree = "<group>"; };
 		DE1FBDFC14F831A300E86642 /* SPResizeEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPResizeEvent.m; sourceTree = "<group>"; };
 		DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -198,6 +201,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8DEE9FD01534BD72004B305F /* Display */,
 				8D87130E1519FE3100EBE8C8 /* Data */,
 				8D711D7115191753007871F5 /* Utils */,
 				8D51A30215175E7A0042955F /* Pages */,
@@ -365,6 +369,15 @@
 				8DB69FB5151F3D4700163271 /* fond_titre@2x.png */,
 			);
 			path = general;
+			sourceTree = "<group>";
+		};
+		8DEE9FD01534BD72004B305F /* Display */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE9FD11534BD9F004B305F /* FichePerso.h */,
+				8DEE9FD21534BD9F004B305F /* FichePerso.m */,
+			);
+			name = Display;
 			sourceTree = "<group>";
 		};
 		DE4A3DAB10FFB0DB00FDA492 /* Products */ = {
@@ -587,6 +600,7 @@
 				8D51A3111517828F0042955F /* PageInventaire.m in Sources */,
 				8D711D741519178F007871F5 /* Slider.m in Sources */,
 				8D8713111519FE4700EBE8C8 /* XMLReader.m in Sources */,
+				8DEE9FD31534BD9F004B305F /* FichePerso.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +618,8 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -612,6 +628,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "App-Info.plist";
 				PRODUCT_NAME = ShadukiamGame;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -619,12 +636,15 @@
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "App-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "App-Info.plist";
 				PRODUCT_NAME = ShadukiamGame;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -636,12 +656,14 @@
 					armv6,
 					armv7,
 				);
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -659,12 +681,14 @@
 					armv6,
 					armv7,
 				);
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

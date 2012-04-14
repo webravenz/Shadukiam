@@ -9,10 +9,11 @@
 #import "Page.h"
 #import "PageManager.h"
 #import "Slider.h"
+#import "FichePerso.h"
 
 @interface PageSelectPerso : Page {
     Slider *sliderPersos;
-    SPQuad *persoActive;
+    FichePerso *persoActive;
     SPQuad *backgroundMask;
 }
 
