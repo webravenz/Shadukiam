@@ -19,6 +19,11 @@
 		8D711D741519178F007871F5 /* Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D711D731519178F007871F5 /* Slider.m */; };
 		8D8713111519FE4700EBE8C8 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8713101519FE4700EBE8C8 /* XMLReader.m */; };
 		8D871315151A028000EBE8C8 /* persos.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8D871314151A028000EBE8C8 /* persos.xml */; };
+		8D9078771539BB3F00E88B5C /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90786D1539BB3F00E88B5C /* Connection.m */; };
+		8D9078781539BB3F00E88B5C /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9078701539BB3F00E88B5C /* Dialog.m */; };
+		8D9078791539BB3F00E88B5C /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9078721539BB3F00E88B5C /* Server.m */; };
+		8D90787A1539BB3F00E88B5C /* ServerBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9078741539BB3F00E88B5C /* ServerBrowser.m */; };
+		8D9078801539C37100E88B5C /* PagePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90787F1539C37100E88B5C /* PagePlay.m */; };
 		8DB69F9E151F3D1800163271 /* ficheperso_bkg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69F92151F3D1800163271 /* ficheperso_bkg_2.png */; };
 		8DB69F9F151F3D1800163271 /* ficheperso_illu_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69F93151F3D1800163271 /* ficheperso_illu_2.png */; };
 		8DB69FA0151F3D1800163271 /* ficheperso_mini_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69F94151F3D1800163271 /* ficheperso_mini_1.png */; };
@@ -118,6 +123,19 @@
 		8D87130F1519FE4700EBE8C8 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = data/XMLReader.h; sourceTree = "<group>"; };
 		8D8713101519FE4700EBE8C8 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = data/XMLReader.m; sourceTree = "<group>"; };
 		8D871314151A028000EBE8C8 /* persos.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = persos.xml; path = ../data/xml/persos.xml; sourceTree = "<group>"; };
+		8D90786C1539BB3F00E88B5C /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Connection.h; path = connection/Connection.h; sourceTree = "<group>"; };
+		8D90786D1539BB3F00E88B5C /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Connection.m; path = connection/Connection.m; sourceTree = "<group>"; };
+		8D90786E1539BB3F00E88B5C /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectionDelegate.h; path = connection/ConnectionDelegate.h; sourceTree = "<group>"; };
+		8D90786F1539BB3F00E88B5C /* Dialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dialog.h; path = connection/Dialog.h; sourceTree = "<group>"; };
+		8D9078701539BB3F00E88B5C /* Dialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dialog.m; path = connection/Dialog.m; sourceTree = "<group>"; };
+		8D9078711539BB3F00E88B5C /* Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Server.h; path = connection/Server.h; sourceTree = "<group>"; };
+		8D9078721539BB3F00E88B5C /* Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Server.m; path = connection/Server.m; sourceTree = "<group>"; };
+		8D9078731539BB3F00E88B5C /* ServerBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerBrowser.h; path = connection/ServerBrowser.h; sourceTree = "<group>"; };
+		8D9078741539BB3F00E88B5C /* ServerBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerBrowser.m; path = connection/ServerBrowser.m; sourceTree = "<group>"; };
+		8D9078751539BB3F00E88B5C /* ServerBrowserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerBrowserDelegate.h; path = connection/ServerBrowserDelegate.h; sourceTree = "<group>"; };
+		8D9078761539BB3F00E88B5C /* ServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerDelegate.h; path = connection/ServerDelegate.h; sourceTree = "<group>"; };
+		8D90787E1539C37100E88B5C /* PagePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePlay.h; path = pages/PagePlay.h; sourceTree = "<group>"; };
+		8D90787F1539C37100E88B5C /* PagePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagePlay.m; path = pages/PagePlay.m; sourceTree = "<group>"; };
 		8DB69F92151F3D1800163271 /* ficheperso_bkg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ficheperso_bkg_2.png; path = ficheperso/ficheperso_bkg_2.png; sourceTree = "<group>"; };
 		8DB69F93151F3D1800163271 /* ficheperso_illu_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ficheperso_illu_2.png; path = ficheperso/ficheperso_illu_2.png; sourceTree = "<group>"; };
 		8DB69F94151F3D1800163271 /* ficheperso_mini_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ficheperso_mini_1.png; path = ficheperso/ficheperso_mini_1.png; sourceTree = "<group>"; };
@@ -201,6 +219,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8D90786B1539BB2100E88B5C /* Connection */,
 				8DEE9FD01534BD72004B305F /* Display */,
 				8D87130E1519FE3100EBE8C8 /* Data */,
 				8D711D7115191753007871F5 /* Utils */,
@@ -283,6 +302,8 @@
 				8D51A30D15177E300042955F /* PageSelectPerso.m */,
 				8D51A30F1517828E0042955F /* PageInventaire.h */,
 				8D51A3101517828F0042955F /* PageInventaire.m */,
+				8D90787E1539C37100E88B5C /* PagePlay.h */,
+				8D90787F1539C37100E88B5C /* PagePlay.m */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -319,6 +340,24 @@
 				8D871314151A028000EBE8C8 /* persos.xml */,
 			);
 			name = xml;
+			sourceTree = "<group>";
+		};
+		8D90786B1539BB2100E88B5C /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				8D90786C1539BB3F00E88B5C /* Connection.h */,
+				8D90786D1539BB3F00E88B5C /* Connection.m */,
+				8D90786E1539BB3F00E88B5C /* ConnectionDelegate.h */,
+				8D90786F1539BB3F00E88B5C /* Dialog.h */,
+				8D9078701539BB3F00E88B5C /* Dialog.m */,
+				8D9078711539BB3F00E88B5C /* Server.h */,
+				8D9078721539BB3F00E88B5C /* Server.m */,
+				8D9078731539BB3F00E88B5C /* ServerBrowser.h */,
+				8D9078741539BB3F00E88B5C /* ServerBrowser.m */,
+				8D9078751539BB3F00E88B5C /* ServerBrowserDelegate.h */,
+				8D9078761539BB3F00E88B5C /* ServerDelegate.h */,
+			);
+			name = Connection;
 			sourceTree = "<group>";
 		};
 		8DB69F8D151F3CDB00163271 /* ficheperso */ = {
@@ -601,6 +640,11 @@
 				8D711D741519178F007871F5 /* Slider.m in Sources */,
 				8D8713111519FE4700EBE8C8 /* XMLReader.m in Sources */,
 				8DEE9FD31534BD9F004B305F /* FichePerso.m in Sources */,
+				8D9078771539BB3F00E88B5C /* Connection.m in Sources */,
+				8D9078781539BB3F00E88B5C /* Dialog.m in Sources */,
+				8D9078791539BB3F00E88B5C /* Server.m in Sources */,
+				8D90787A1539BB3F00E88B5C /* ServerBrowser.m in Sources */,
+				8D9078801539C37100E88B5C /* PagePlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

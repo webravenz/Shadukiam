@@ -67,7 +67,7 @@ static int stageHeight;
     [self addChild:[PageManager getInstance]];
     [PageManager getInstance].x = xOrigin;
     [PageManager getInstance].y = yOrigin;
-    [[PageManager getInstance] changePage:@"PageSelectPerso"];
+    [[PageManager getInstance] changePage:@"PagePlay"];
     
 }
 
