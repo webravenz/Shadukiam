@@ -24,6 +24,7 @@
 		8D9078791539BB3F00E88B5C /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9078721539BB3F00E88B5C /* Server.m */; };
 		8D90787A1539BB3F00E88B5C /* ServerBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9078741539BB3F00E88B5C /* ServerBrowser.m */; };
 		8D9078801539C37100E88B5C /* PagePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90787F1539C37100E88B5C /* PagePlay.m */; };
+		8D907888153A115500E88B5C /* PageTDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D907887153A115300E88B5C /* PageTDB.m */; };
 		8DB69F9E151F3D1800163271 /* ficheperso_bkg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69F92151F3D1800163271 /* ficheperso_bkg_2.png */; };
 		8DB69F9F151F3D1800163271 /* ficheperso_illu_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69F93151F3D1800163271 /* ficheperso_illu_2.png */; };
 		8DB69FA0151F3D1800163271 /* ficheperso_mini_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB69F94151F3D1800163271 /* ficheperso_mini_1.png */; };
@@ -136,6 +137,8 @@
 		8D9078761539BB3F00E88B5C /* ServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerDelegate.h; path = connection/ServerDelegate.h; sourceTree = "<group>"; };
 		8D90787E1539C37100E88B5C /* PagePlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PagePlay.h; path = pages/PagePlay.h; sourceTree = "<group>"; };
 		8D90787F1539C37100E88B5C /* PagePlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PagePlay.m; path = pages/PagePlay.m; sourceTree = "<group>"; };
+		8D907886153A115200E88B5C /* PageTDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageTDB.h; path = pages/PageTDB.h; sourceTree = "<group>"; };
+		8D907887153A115300E88B5C /* PageTDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageTDB.m; path = pages/PageTDB.m; sourceTree = "<group>"; };
 		8DB69F92151F3D1800163271 /* ficheperso_bkg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ficheperso_bkg_2.png; path = ficheperso/ficheperso_bkg_2.png; sourceTree = "<group>"; };
 		8DB69F93151F3D1800163271 /* ficheperso_illu_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ficheperso_illu_2.png; path = ficheperso/ficheperso_illu_2.png; sourceTree = "<group>"; };
 		8DB69F94151F3D1800163271 /* ficheperso_mini_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ficheperso_mini_1.png; path = ficheperso/ficheperso_mini_1.png; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				8D51A3101517828F0042955F /* PageInventaire.m */,
 				8D90787E1539C37100E88B5C /* PagePlay.h */,
 				8D90787F1539C37100E88B5C /* PagePlay.m */,
+				8D907886153A115200E88B5C /* PageTDB.h */,
+				8D907887153A115300E88B5C /* PageTDB.m */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -645,6 +650,7 @@
 				8D9078791539BB3F00E88B5C /* Server.m in Sources */,
 				8D90787A1539BB3F00E88B5C /* ServerBrowser.m in Sources */,
 				8D9078801539C37100E88B5C /* PagePlay.m in Sources */,
+				8D907888153A115500E88B5C /* PageTDB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

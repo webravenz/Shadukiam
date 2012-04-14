@@ -13,6 +13,8 @@
 
 - (void) show {
     
+    persoSelected = NO;
+    
     // init slider
     sliderPersos = [[Slider alloc] initWithWidth:3 * 210 height:[Game stageHeight]];
     [self addChild:sliderPersos];
@@ -70,6 +72,9 @@
     persoActive.alpha = 0;
     [self addChild:persoActive];
     
+    // select perso
+    [persoActive addEventListener:@selector(onSelectPerso:) atObject:self forType:@"touchOK"];
+    
     // tween fiche et background
     SPTween *tweenFiche = [SPTween tweenWithTarget:persoActive time:0.5f transition:SP_TRANSITION_EASE_OUT];
     [tweenFiche animateProperty:@"y" targetValue:persoActive.y - 30];
@@ -90,6 +95,7 @@
 // ferme fiche perso
 - (void) closePerso:(SPTouchEvent*)event {
     [backgroundMask removeEventListener:@selector(closePerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [persoActive removeEventListener:@selector(onSelectPerso:) atObject:self forType:@"touchOK"];
     
     // tween fiche et background
     SPTween *tweenFiche = [SPTween tweenWithTarget:persoActive time:0.5f transition:SP_TRANSITION_EASE_OUT];
@@ -107,6 +113,12 @@
     
 }
 
+// selection d'un perso
+- (void) onSelectPerso:(SPEvent*)event {
+    persoSelected = YES;
+    [self closePerso:nil];
+}
+
 - (void) onClosePersoCompleted:(SPEvent*)event {
     
     [event.currentTarget removeEventListener:@selector(onClosePersoCompleted:) atObject:self forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
@@ -115,6 +127,10 @@
     persoActive = nil;
     [self removeChild:backgroundMask];
     backgroundMask.alpha = 0;
+    
+    if(persoSelected) {
+        [[PageManager getInstance] changePage:@"PageTDB"];
+    }
     
 }
 

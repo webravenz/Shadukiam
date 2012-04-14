@@ -25,6 +25,11 @@
     retourneBtn.x = 60;
     retourneBtn.y = 110;
     
+    okBtn = [SPImage imageWithContentsOfFile:@"valide.png"];
+    [general addChild:okBtn];
+    okBtn.x = 330;
+    okBtn.y = 110;
+    
     [self addChild:general];
     
     // front : portrait + nom
@@ -54,6 +59,7 @@
     
     // listeners
     [retourneBtn addEventListener:@selector(onTouchRetourne:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [okBtn addEventListener:@selector(onTouchOk:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     
 }
 
@@ -103,6 +109,10 @@
         [self.stage.juggler addObject:tweenFront];
         [self.stage.juggler addObject:tweenBack];
     }
+}
+
+-(void) onTouchOk:(SPTouchEvent*) event {
+    [self dispatchEvent:[SPEvent eventWithType:@"touchOK"]];
 }
 
 - (void)finalize

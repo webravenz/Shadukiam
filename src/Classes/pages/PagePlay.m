@@ -22,7 +22,7 @@
     [Dialog getInstance].delegate = self;
     [[Dialog getInstance] connect];
     
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(checkConnection:) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(checkConnection:) userInfo:nil repeats:NO];
     
 }
 

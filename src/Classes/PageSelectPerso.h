@@ -15,6 +15,8 @@
     Slider *sliderPersos;
     FichePerso *persoActive;
     SPQuad *backgroundMask;
+    
+    bool persoSelected;
 }
 
 - (void) onTouchPerso:(SPTouchEvent*)event;

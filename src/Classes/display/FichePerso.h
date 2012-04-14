@@ -19,6 +19,7 @@
     SPImage *nom;
     SPImage *retourneBtn;
     SPImage *nomBack;
+    SPImage *okBtn;
     
     bool isFront;
     
