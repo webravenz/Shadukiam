@@ -36,12 +36,6 @@ static int stageHeight;
     return self;
 }
 
-- (void)dealloc
-{
-    // release any resources here
-    
-    [super dealloc];
-}
 
 - (void)setup
 {

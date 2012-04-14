@@ -74,6 +74,7 @@
     SPTween *tweenFiche = [SPTween tweenWithTarget:persoActive time:0.5f transition:SP_TRANSITION_EASE_OUT];
     [tweenFiche animateProperty:@"y" targetValue:persoActive.y - 30];
     [tweenFiche animateProperty:@"alpha" targetValue:1];
+    tweenFiche.delay = 0.25f;
     
     SPTween *tweenBack = [SPTween tweenWithTarget:backgroundMask time:0.5f transition:SP_TRANSITION_EASE_OUT];
     [tweenBack animateProperty:@"alpha" targetValue:0.5];

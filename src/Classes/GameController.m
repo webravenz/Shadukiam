@@ -42,11 +42,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [mGame release];
-    [super dealloc];
-}
 
 - (UIInterfaceOrientation)initialInterfaceOrientation
 {
@@ -114,7 +109,6 @@
         SPEvent *resizeEvent = [[SPResizeEvent alloc] initWithType:SP_EVENT_TYPE_RESIZE
                                 width:newWidth height:newHeight animationTime:animationTime];
         [mGame broadcastEvent:resizeEvent];
-        [resizeEvent release];
     }
 }
 

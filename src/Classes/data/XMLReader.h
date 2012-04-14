@@ -9,7 +9,7 @@
 {
     NSMutableArray *dictionaryStack;
     NSMutableString *textInProgress;
-    NSError **errorPointer;
+    //NSError **errorPointer;
 }
 
 + (NSDictionary *)dictionaryForPath:(NSString *)path error:(NSError **)errorPointer;

@@ -13,7 +13,7 @@
 
 - (id)initWithWidth:(float)width height:(float)height
 {
-    [super init];
+    self = [super init];
     
     // init de la taille, et de la zone pour pouvoir drager sur tout le slider
     self.width = width;
@@ -74,7 +74,6 @@
     // event listeners should always be removed to avoid memory leaks!
     [self removeEventListenersAtObject:self forType:SP_EVENT_TYPE_TOUCH];
     zoneDrag = nil;
-    [super dealloc];
 }
 
 @end
