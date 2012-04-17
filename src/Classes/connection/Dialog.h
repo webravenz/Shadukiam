@@ -19,6 +19,7 @@
 - (void) clientConnected:(Connection*)connection;
 - (void) receiveMessage:(NSString*)message;
 - (void) gameLaunched;
+- (void) persoSelected:(int)numPerso;
 
 @end
 

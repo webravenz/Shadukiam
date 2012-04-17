@@ -22,9 +22,13 @@
     SPImage *okBtn;
     
     bool isFront;
+    int numPerso;
     
 }
 
+@property int numPerso;
+
 - (void) initWithPerso:(int)numPerso;
+-(void) removeOK;
 
 @end

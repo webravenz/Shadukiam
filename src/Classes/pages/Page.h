@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "Dialog.h"
+
 @interface Page : SPSprite
 
 -(void) show;

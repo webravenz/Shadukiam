@@ -111,11 +111,19 @@
     [tweenBack addEventListener:@selector(onClosePersoCompleted:) atObject:self
                     forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
     
+    if(persoSelected) {
+        SPTween *tweenSlider = [SPTween tweenWithTarget:sliderPersos time:0.5f transition:SP_TRANSITION_EASE_OUT];
+        [tweenSlider animateProperty:@"alpha" targetValue:0];
+    }
+    
 }
 
 // selection d'un perso
 - (void) onSelectPerso:(SPEvent*)event {
     persoSelected = YES;
+    
+    [[Dialog getInstance] sendMessage:@"persoSelected" sendTo:-1 data:[NSString stringWithFormat:@"%d", persoActive.numPerso]];
+    
     [self closePerso:nil];
 }
 
@@ -129,9 +137,22 @@
     backgroundMask.alpha = 0;
     
     if(persoSelected) {
-        [[PageManager getInstance] changePage:@"PageTDB"];
+        //[[PageManager getInstance] changePage:@"PageTDB"];
+        [self removeChild:sliderPersos];
     }
     
+}
+
+#pragma mark dialog delegate
+- (void) persoSelected:(int)numPerso {
+    [sliderPersos childAtIndex:numPerso].alpha = 0.5;
+    [[sliderPersos childAtIndex:numPerso] removeEventListener:@selector(onTouchPerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    
+    if(persoActive != nil) {
+        if(persoActive.numPerso == numPerso) {
+            [persoActive removeOK];
+        }
+    }
 }
 
 

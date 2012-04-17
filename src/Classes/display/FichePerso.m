@@ -10,7 +10,11 @@
 
 @implementation FichePerso
 
-- (void) initWithPerso:(int)numPerso {
+@synthesize numPerso;
+
+- (void) initWithPerso:(int)pnumPerso {
+    
+    numPerso = pnumPerso;
     
     isFront = YES;
     
@@ -113,6 +117,10 @@
 
 -(void) onTouchOk:(SPTouchEvent*) event {
     [self dispatchEvent:[SPEvent eventWithType:@"touchOK"]];
+}
+
+-(void) removeOK {
+    [self removeChild:okBtn];
 }
 
 - (void)finalize

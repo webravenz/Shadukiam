@@ -7,7 +7,6 @@
 //
 
 #import "Page.h"
-#import "Dialog.h"
 #import "PageManager.h"
 
 @interface PagePlay : Page <DialogDelegate> {
