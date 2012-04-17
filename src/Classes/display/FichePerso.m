@@ -120,7 +120,7 @@
 }
 
 -(void) removeOK {
-    [self removeChild:okBtn];
+    [general removeChild:okBtn];
 }
 
 - (void)finalize

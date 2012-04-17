@@ -13,6 +13,8 @@
 
 - (void) show {
     
+    [Dialog getInstance].delegate = self;
+    
     persoSelected = NO;
     
     // init slider
@@ -114,6 +116,7 @@
     if(persoSelected) {
         SPTween *tweenSlider = [SPTween tweenWithTarget:sliderPersos time:0.5f transition:SP_TRANSITION_EASE_OUT];
         [tweenSlider animateProperty:@"alpha" targetValue:0];
+        [self.stage.juggler addObject:tweenSlider];
     }
     
 }
