@@ -69,6 +69,12 @@ static int stageHeight;
     [PageManager getInstance].y = yOrigin;
     [[PageManager getInstance] changePage:@"PagePlay"];
     
+    // menu
+    [self addChild:[Menu getInstance]];
+    [Menu getInstance].x = xOrigin;
+    [Menu getInstance].y = yOrigin;
+    [[Menu getInstance] initMenu];
+    
 }
 
 + (int)stageWidth {

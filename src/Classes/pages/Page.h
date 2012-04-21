@@ -7,6 +7,7 @@
 //
 
 #import "Dialog.h"
+#import "Menu.h"
 
 @interface Page : SPSprite
 

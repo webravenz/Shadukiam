@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIDevice.h>
 #import "PageManager.h"
+#import "Menu.h"
 
 @interface Game : SPSprite
 {

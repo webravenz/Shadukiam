@@ -207,9 +207,7 @@ static Dialog *instance = nil;
         // quelqun a selectionné un perso
         else if([commande isEqualToString:@"persoSelected"]) {
             NSString *numStr = [packet objectForKey:@"data"];
-            NSLog(numStr);
             int num = [numStr intValue];
-            NSLog(@"%d", num);
             [delegate persoSelected:num];
         }
         

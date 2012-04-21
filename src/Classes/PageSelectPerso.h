@@ -10,17 +10,19 @@
 #import "PageManager.h"
 #import "Slider.h"
 #import "FichePerso.h"
+#import "Titre.h"
 
 @interface PageSelectPerso : Page {
     Slider *sliderPersos;
     FichePerso *persoActive;
     SPQuad *backgroundMask;
+    Titre *titre;
     
     bool persoSelected;
 }
 
 - (void) onTouchPerso:(SPTouchEvent*)event;
-- (void) showPerso;
+- (void) showPerso:(int)numPerso;
 - (void) closePerso:(SPTouchEvent*)event;
 
 @end

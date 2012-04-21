@@ -17,16 +17,23 @@
     
     persoSelected = NO;
     
+    // init titre
+    titre = [[Titre alloc] initWithText:@"SELECTION DU PERSONNAGE"];
+    [self addChild:titre];
+    titre.y = 0;
+    titre.x = 120;
+    
     // init slider
     sliderPersos = [[Slider alloc] initWithWidth:3 * 210 height:[Game stageHeight]];
     [self addChild:sliderPersos];
-    sliderPersos.y = 30;
+    sliderPersos.y = 40;
     
     // init fiches
     for(int i = 1; i < 4; i++) {
         SPImage *ficheMini = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_mini_%d.png", i]];
         [sliderPersos addChild:ficheMini];
         ficheMini.x = (i * 210) - 170;
+        ficheMini.name = [NSString stringWithFormat:@"%d", i];
         [ficheMini addEventListener:@selector(onTouchPerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     }
     
@@ -54,23 +61,25 @@
         SPTouch *touch = [touches objectAtIndex:0];
         if (touch.tapCount == 1)
         {
-            [self showPerso];
+            SPImage *persoTouch = (SPImage*)event.target;
+            int numTouch = [persoTouch.name intValue];
+            [self showPerso:numTouch];
         }
     }
     
 }
 
 // affichage d'une fiche perso en grand
-- (void) showPerso {
+- (void) showPerso:(int)numPerso {
     
     [self addChild:backgroundMask];
     
     // init fiche
     persoActive = [[FichePerso alloc] init ];
-    [persoActive initWithPerso:2];
+    [persoActive initWithPerso:numPerso];
     
-    persoActive.x = ([Game stageWidth] - persoActive.width) / 2;
-    persoActive.y = ([Game stageHeight] - persoActive.height) / 2 + 30;
+    persoActive.x = ([Game stageWidth] - persoActive.width) / 2 + 17;
+    persoActive.y = ([Game stageHeight] - persoActive.height) / 2 + 45;
     persoActive.alpha = 0;
     [self addChild:persoActive];
     
@@ -113,6 +122,7 @@
     [tweenBack addEventListener:@selector(onClosePersoCompleted:) atObject:self
                     forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
     
+    // si on a selectionné un perso, on masque le slider
     if(persoSelected) {
         SPTween *tweenSlider = [SPTween tweenWithTarget:sliderPersos time:0.5f transition:SP_TRANSITION_EASE_OUT];
         [tweenSlider animateProperty:@"alpha" targetValue:0];
@@ -126,6 +136,8 @@
     persoSelected = YES;
     
     [[Dialog getInstance] sendMessage:@"persoSelected" sendTo:-1 data:[NSString stringWithFormat:@"%d", persoActive.numPerso]];
+    
+    [[Menu getInstance] addPerso:persoActive.numPerso];
     
     [self closePerso:nil];
 }
@@ -147,6 +159,8 @@
 }
 
 #pragma mark dialog delegate
+
+// quelqun a selectionné un perso
 - (void) persoSelected:(int)numPerso {
     [sliderPersos childAtIndex:numPerso].alpha = 0.5;
     [[sliderPersos childAtIndex:numPerso] removeEventListener:@selector(onTouchPerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
@@ -156,6 +170,9 @@
             [persoActive removeOK];
         }
     }
+    
+    // ajout au menu
+    [[Menu getInstance] addPerso:numPerso];
 }
 
 
@@ -164,6 +181,8 @@
     // event listeners should always be removed to avoid memory leaks!
     [self removeChild:backgroundMask];
     backgroundMask = nil;
+    [self removeChild:titre];
+    titre = nil;
     [super finalize];
 }
 
