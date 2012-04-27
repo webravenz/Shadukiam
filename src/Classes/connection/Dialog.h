@@ -19,7 +19,8 @@
 - (void) clientConnected:(Connection*)connection;
 - (void) receiveMessage:(NSString*)message;
 - (void) gameLaunched;
-- (void) persoSelected:(int)numPerso;
+- (void) persoSelected:(int)numPerso fromID:(int)playerID;
+- (void) gameStart;
 
 @end
 

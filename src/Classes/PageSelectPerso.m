@@ -135,9 +135,12 @@
 - (void) onSelectPerso:(SPEvent*)event {
     persoSelected = YES;
     
+    [InfosJoueur setMyPerso:persoActive.numPerso];
+    
     [[Dialog getInstance] sendMessage:@"persoSelected" sendTo:-1 data:[NSString stringWithFormat:@"%d", persoActive.numPerso]];
     
-    [[Menu getInstance] addPerso:persoActive.numPerso];
+    [self onPersoAdded:persoActive.numPerso forPlayer:[Dialog getInstance].myID];
+    
     
     [self closePerso:nil];
 }
@@ -158,10 +161,25 @@
     
 }
 
+// perso ajouté, que ça soit moi ou un autre
+- (void) onPersoAdded:(int)numPerso forPlayer:(int)playerID {
+    
+    [[Menu getInstance] addPerso:numPerso];
+    [InfosPartie addPlayer:numPerso forPlayer:playerID];
+    
+    // si on est le serveur on verifie si tout le monde a select son perso
+    if([Dialog getInstance].isServer) {
+        if([InfosPartie getNbPlayers] == [Dialog getInstance].clientsID.count + 1) {
+            [[Dialog getInstance] sendMessage:@"gamestart" sendTo:-1 data:@"data"];
+            [[PageManager getInstance] changePage:@"PageTDB"];
+        }
+    }
+}
+
 #pragma mark dialog delegate
 
 // quelqun a selectionné un perso
-- (void) persoSelected:(int)numPerso {
+- (void) persoSelected:(int)numPerso fromID:(int)playerID {
     [sliderPersos childAtIndex:numPerso].alpha = 0.5;
     [[sliderPersos childAtIndex:numPerso] removeEventListener:@selector(onTouchPerso:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     
@@ -172,7 +190,12 @@
     }
     
     // ajout au menu
-    [[Menu getInstance] addPerso:numPerso];
+    [self onPersoAdded:numPerso forPlayer:playerID];
+}
+
+// lancement de la partie
+- (void) gameStart {
+    [[PageManager getInstance] changePage:@"PageTDB"];
 }
 
 

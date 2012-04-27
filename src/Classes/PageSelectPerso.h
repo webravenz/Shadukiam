@@ -11,6 +11,8 @@
 #import "Slider.h"
 #import "FichePerso.h"
 #import "Titre.h"
+#import "InfosPartie.h"
+#import "InfosJoueur.h"
 
 @interface PageSelectPerso : Page {
     Slider *sliderPersos;
@@ -24,5 +26,6 @@
 - (void) onTouchPerso:(SPTouchEvent*)event;
 - (void) showPerso:(int)numPerso;
 - (void) closePerso:(SPTouchEvent*)event;
+- (void) onPersoAdded:(int)numPerso forPlayer:(int)playerID;
 
 @end

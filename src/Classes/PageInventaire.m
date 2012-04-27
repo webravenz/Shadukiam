@@ -11,8 +11,12 @@
 @implementation PageInventaire
 
 - (void) show {
-    SPQuad *carre = [SPQuad quadWithWidth:100 height:100 color:0xFF0000];
-    [self addChild:carre];
+    
+    titre = [[Titre alloc] initWithText:@"INVENTAIRE"];
+    [self addChild:titre];
+    titre.x = 120;
+    titre.y = 3;
+    
 }
 
 @end

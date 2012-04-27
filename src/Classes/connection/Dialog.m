@@ -208,7 +208,12 @@ static Dialog *instance = nil;
         else if([commande isEqualToString:@"persoSelected"]) {
             NSString *numStr = [packet objectForKey:@"data"];
             int num = [numStr intValue];
-            [delegate persoSelected:num];
+            int fromIDInt = [fromID intValue];
+            [delegate persoSelected:num fromID:fromIDInt];
+        }
+        // tout le monde a selectionné son perso lancement de la partie
+        else if([commande isEqualToString:@"gamestart"]) {
+            [delegate gameStart];
         }
         
     }

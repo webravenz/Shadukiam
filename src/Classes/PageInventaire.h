@@ -7,7 +7,12 @@
 //
 
 #import "Page.h"
+#import "Titre.h"
 
-@interface PageInventaire : Page
+@interface PageInventaire : Page {
+    
+    Titre *titre;
+    
+}
 
 @end
