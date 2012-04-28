@@ -1,27 +1,27 @@
 //
-//  FichePerso.m
+//  FicheObjet.m
 //  ShadukiamGame
 //
 //  Created by yael on 10/04/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "FichePerso.h"
+#import "FicheObjet.h"
 
-@implementation FichePerso
+@implementation FicheObjet
 
-@synthesize numPerso;
+@synthesize objetID;
 
-- (void) initWithPerso:(int)pnumPerso {
+- (void) initWithID:(int)ID {
     
-    numPerso = pnumPerso;
+    objetID = ID;
     
     isFront = YES;
     
     // general : background / boutons
     general = [SPSprite sprite];
     
-    background = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_bkg_%d.png", numPerso]];
+    background = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_bkg_%d.png", [InfosJoueur getMyPerso]]];
     [general addChild:background];
     
     retourneBtn = [SPImage imageWithContentsOfFile:@"retourne.png"];
@@ -40,12 +40,12 @@
     front = [SPSprite sprite];
     [self addChild:front];
     
-    portrait = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_illu_%d.png", numPerso]];
+    portrait = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"objet_image_%d.png", objetID]];
     [front addChild:portrait];
     portrait.x = (background.width - portrait.width) / 2;
-    portrait.y = 10;
+    portrait.y = 20;
     
-    nom = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_nom_%d.png", numPerso]];
+    nom = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"objet_nom_%d.png", objetID]];
     [front addChild:nom];
     nom.x = (background.width - nom.width) / 2;
     nom.y = 200;
@@ -56,7 +56,7 @@
     back.x = background.width / 2;
     back.scaleX = 0;
     
-    nomBack = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_nom_%d.png", numPerso]];
+    nomBack = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"objet_nom_%d.png", objetID]];
     [back addChild:nomBack];
     nomBack.x = (background.width - nomBack.width) / 2;
     nomBack.y = 30;
@@ -79,7 +79,7 @@
         tweenGeneral2.delay = 0.25f;
         [tweenGeneral2 animateProperty:@"scaleX" targetValue:1];
         [tweenGeneral2 animateProperty:@"x" targetValue:0];
-    
+        
         SPTween *tweenFront;
         SPTween *tweenBack;
         
@@ -105,9 +105,9 @@
             [tweenBack animateProperty:@"scaleX" targetValue:0];
             [tweenBack animateProperty:@"x" targetValue:background.width / 2];
         }
-    
+        
         isFront = !isFront;
-    
+        
         [self.stage.juggler addObject:tweenGeneral];
         [self.stage.juggler addObject:tweenGeneral2];
         [self.stage.juggler addObject:tweenFront];
@@ -117,11 +117,6 @@
 
 -(void) onTouchOk:(SPTouchEvent*) event {
     [self dispatchEvent:[SPEvent eventWithType:@"touchOK"]];
-    [okBtn removeEventListener:@selector(onTouchOk:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-}
-
--(void) removeOK {
-    [general removeChild:okBtn];
 }
 
 - (void)finalize
@@ -133,10 +128,6 @@
     [retourneBtn removeEventListener:@selector(onTouchRetourne:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     [general removeChild:retourneBtn];
     retourneBtn = nil;
-    
-    [general removeChild:okBtn];
-    [okBtn removeEventListener:@selector(onTouchOk:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-    okBtn = nil;
     
     [self removeChild:general];
     general = nil;

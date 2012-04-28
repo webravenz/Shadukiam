@@ -12,5 +12,7 @@
 
 + (void) setMyPerso:(int)numPerso;
 + (int) getMyPerso;
++ (void) addObjet:(int) objetID;
++ (NSMutableArray*) getObjets;
 
 @end

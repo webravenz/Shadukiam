@@ -9,7 +9,7 @@
 #import "Page.h"
 #import "PageManager.h"
 
-@interface PagePlay : Page <DialogDelegate> {
+@interface PagePlay : Page {
     
     SPQuad *playBtn;
     bool connected;

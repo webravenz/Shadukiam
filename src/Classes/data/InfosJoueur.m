@@ -11,6 +11,11 @@
 @implementation InfosJoueur
 
 static int myPerso = 0;
+static NSMutableArray* objets = nil;
+
++(void) initialize {
+    objets = [NSMutableArray array];
+}
 
 + (void) setMyPerso:(int)numPerso {
     myPerso = numPerso;
@@ -18,6 +23,14 @@ static int myPerso = 0;
 
 + (int) getMyPerso {
     return myPerso;
+}
+
++ (void) addObjet:(int) objetID {
+    [objets addObject:[NSNumber numberWithInt:objetID]];
+}
+
++(NSMutableArray*) getObjets {
+    return objets;
 }
 
 @end

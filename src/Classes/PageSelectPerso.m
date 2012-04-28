@@ -13,7 +13,7 @@
 
 - (void) show {
     
-    [Dialog getInstance].delegate = self;
+    [super show];
     
     persoSelected = NO;
     
@@ -133,16 +133,18 @@
 
 // selection d'un perso
 - (void) onSelectPerso:(SPEvent*)event {
-    persoSelected = YES;
+    if(!persoSelected) {
+        persoSelected = YES;
     
-    [InfosJoueur setMyPerso:persoActive.numPerso];
+        [InfosJoueur setMyPerso:persoActive.numPerso];
     
-    [[Dialog getInstance] sendMessage:@"persoSelected" sendTo:-1 data:[NSString stringWithFormat:@"%d", persoActive.numPerso]];
+        [[Dialog getInstance] sendMessage:@"persoSelected" sendTo:-1 data:[NSString stringWithFormat:@"%d", persoActive.numPerso]];
     
-    [self onPersoAdded:persoActive.numPerso forPlayer:[Dialog getInstance].myID];
+        [self onPersoAdded:persoActive.numPerso forPlayer:[Dialog getInstance].myID];
     
     
-    [self closePerso:nil];
+        [self closePerso:nil];
+    }
 }
 
 - (void) onClosePersoCompleted:(SPEvent*)event {

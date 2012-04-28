@@ -21,7 +21,11 @@
     TDBBtn *btnEnigme;
     TDBBtn *btnMessagerie;
     TDBBtn *btnIntuition;
+    SPSprite *buttons;
+    NSString *targetPage;
     
 }
+
+-(void) animQuit;
 
 @end

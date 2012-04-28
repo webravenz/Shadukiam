@@ -63,6 +63,14 @@ static int stageHeight;
     background.y = yOrigin;
     [self addChild:background];
     
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(initGame:) userInfo:nil repeats:NO];
+    
+}
+
+- (void) initGame:(NSTimer*) timer {
+    
+     
     // pagemanager
     [self addChild:[PageManager getInstance]];
     [PageManager getInstance].x = xOrigin;
@@ -76,7 +84,12 @@ static int stageHeight;
     [self addChild:[Menu getInstance]];
     [Menu getInstance].x = xOrigin;
     [Menu getInstance].y = yOrigin;
-    [[Menu getInstance] initMenu];
+    [[Menu getInstance] initMenu];                                 
+    
+    
+    //kill the timer
+    [timer invalidate];
+    timer = nil;
     
 }
 

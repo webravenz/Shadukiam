@@ -12,6 +12,8 @@
 
 - (void) show {
     
+    [super show];
+    
     // bouton play
     playBtn = [SPQuad quadWithWidth:200 height:50 color:0x000000];
     playBtn.x = 100;
@@ -19,7 +21,6 @@
     
     // init dialog
     connected = NO;
-    [Dialog getInstance].delegate = self;
     [[Dialog getInstance] connect];
     
     [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(checkConnection:) userInfo:nil repeats:NO];

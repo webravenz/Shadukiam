@@ -16,6 +16,8 @@
 		8D51A30815175F010042955F /* PageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A30715175F010042955F /* PageManager.m */; };
 		8D51A30E15177E300042955F /* PageSelectPerso.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A30D15177E300042955F /* PageSelectPerso.m */; };
 		8D51A3111517828F0042955F /* PageInventaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A3101517828F0042955F /* PageInventaire.m */; };
+		8D538203154BEF1C0039A29B /* ObjetMini.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D538202154BEF1C0039A29B /* ObjetMini.m */; };
+		8D538206154C42AA0039A29B /* FicheObjet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D538205154C42AA0039A29B /* FicheObjet.m */; };
 		8D594F351542E5C70053ED18 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D594F341542E5C70053ED18 /* Menu.m */; };
 		8D594F3B1542EDF10053ED18 /* menu_perso_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D594F371542EDF10053ED18 /* menu_perso_1.png */; };
 		8D594F3C1542EDF10053ED18 /* menu_perso_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D594F381542EDF10053ED18 /* menu_perso_2.png */; };
@@ -170,6 +172,10 @@
 		8D51A30D15177E300042955F /* PageSelectPerso.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageSelectPerso.m; sourceTree = "<group>"; };
 		8D51A30F1517828E0042955F /* PageInventaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageInventaire.h; sourceTree = "<group>"; };
 		8D51A3101517828F0042955F /* PageInventaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageInventaire.m; sourceTree = "<group>"; };
+		8D538201154BEF1C0039A29B /* ObjetMini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjetMini.h; path = display/ObjetMini.h; sourceTree = "<group>"; };
+		8D538202154BEF1C0039A29B /* ObjetMini.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjetMini.m; path = display/ObjetMini.m; sourceTree = "<group>"; };
+		8D538204154C42AA0039A29B /* FicheObjet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FicheObjet.h; path = display/FicheObjet.h; sourceTree = "<group>"; };
+		8D538205154C42AA0039A29B /* FicheObjet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FicheObjet.m; path = display/FicheObjet.m; sourceTree = "<group>"; };
 		8D594F331542E5C70053ED18 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		8D594F341542E5C70053ED18 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		8D594F371542EDF10053ED18 /* menu_perso_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_perso_1.png; sourceTree = "<group>"; };
@@ -623,6 +629,10 @@
 				8D594F6115430B270053ED18 /* Titre.m */,
 				8D6FF58E154ACE7700E8D19E /* TDBBtn.h */,
 				8D6FF58F154ACE7700E8D19E /* TDBBtn.m */,
+				8D538201154BEF1C0039A29B /* ObjetMini.h */,
+				8D538202154BEF1C0039A29B /* ObjetMini.m */,
+				8D538204154C42AA0039A29B /* FicheObjet.h */,
+				8D538205154C42AA0039A29B /* FicheObjet.m */,
 			);
 			name = Display;
 			sourceTree = "<group>";
@@ -913,6 +923,8 @@
 				8D6FF547154AB0E100E8D19E /* InfosPartie.m in Sources */,
 				8D6FF54A154ABC1300E8D19E /* InfosJoueur.m in Sources */,
 				8D6FF590154ACE7700E8D19E /* TDBBtn.m in Sources */,
+				8D538203154BEF1C0039A29B /* ObjetMini.m in Sources */,
+				8D538206154C42AA0039A29B /* FicheObjet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

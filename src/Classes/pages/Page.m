@@ -12,6 +12,8 @@
 
 -(void) show {
     
+    [Dialog getInstance].delegate = self;
+    
 }
 
 @end
