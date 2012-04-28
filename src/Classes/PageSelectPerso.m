@@ -16,6 +16,7 @@
     [super show];
     
     persoSelected = NO;
+    gameStarted = NO;
     
     // init titre
     titre = [[Titre alloc] initWithText:@"SELECTION DU PERSONNAGE"];
@@ -148,7 +149,6 @@
 }
 
 - (void) onClosePersoCompleted:(SPEvent*)event {
-    
     [event.currentTarget removeEventListener:@selector(onClosePersoCompleted:) atObject:self forType:SP_EVENT_TYPE_TWEEN_COMPLETED];
     
     [self removeChild:persoActive];
@@ -159,6 +159,10 @@
     if(persoSelected) {
         //[[PageManager getInstance] changePage:@"PageTDB"];
         [self removeChild:sliderPersos];
+    }
+    
+    if(gameStarted) {
+        [[PageManager getInstance] changePage:@"PageTDB"];
     }
     
 }
@@ -173,7 +177,12 @@
     if([Dialog getInstance].isServer) {
         if([InfosPartie getNbPlayers] == [Dialog getInstance].clientsID.count + 1) {
             [[Dialog getInstance] sendMessage:@"gamestart" sendTo:-1 data:@"data"];
-            [[PageManager getInstance] changePage:@"PageTDB"];
+            
+            if(persoActive == nil) {
+                [[PageManager getInstance] changePage:@"PageTDB"];
+            } else {
+                gameStarted = YES;
+            }
         }
     }
 }
@@ -197,7 +206,11 @@
 
 // lancement de la partie
 - (void) gameStart {
-    [[PageManager getInstance] changePage:@"PageTDB"];
+    if(persoActive == nil) {
+        [[PageManager getInstance] changePage:@"PageTDB"];
+    } else {
+        gameStarted = YES;
+    }
 }
 
 

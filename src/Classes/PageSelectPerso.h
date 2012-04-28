@@ -21,6 +21,7 @@
     Titre *titre;
     
     bool persoSelected;
+    bool gameStarted;
 }
 
 - (void) onTouchPerso:(SPTouchEvent*)event;
