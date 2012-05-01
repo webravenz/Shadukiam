@@ -26,8 +26,10 @@
     // init drag
     diffX = 0;
     speed = 0;
-    [self addEventListener:@selector(onTouchEvent:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-    [self addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+    if(self.width > [Game stageWidth]) {
+        [self addEventListener:@selector(onTouchEvent:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+        [self addEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+    }
     
     return self;
 }
@@ -69,10 +71,13 @@
 }
 
 
-- (void)dealloc
+- (void)finalize
 {
     // event listeners should always be removed to avoid memory leaks!
-    [self removeEventListenersAtObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [self removeEventListener:@selector(onTouchEvent:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    [self removeEventListener:@selector(onEnterFrame:) atObject:self forType:SP_EVENT_TYPE_ENTER_FRAME];
+    
+    [self removeChild:zoneDrag];
     zoneDrag = nil;
 }
 

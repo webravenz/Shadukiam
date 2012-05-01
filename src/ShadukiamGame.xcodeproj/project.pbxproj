@@ -12,6 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		8D4DD4FC154FCFDD00807C90 /* objets.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8D4DD4FB154FCFDD00807C90 /* objets.xml */; };
 		8D51A30515175ECE0042955F /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A30415175ECE0042955F /* Page.m */; };
 		8D51A30815175F010042955F /* PageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A30715175F010042955F /* PageManager.m */; };
 		8D51A30E15177E300042955F /* PageSelectPerso.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A30D15177E300042955F /* PageSelectPerso.m */; };
@@ -164,6 +165,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D4DD4FB154FCFDD00807C90 /* objets.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = objets.xml; path = ../data/xml/objets.xml; sourceTree = "<group>"; };
 		8D51A30315175ECE0042955F /* Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Page.h; path = pages/Page.h; sourceTree = "<group>"; };
 		8D51A30415175ECE0042955F /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Page.m; path = pages/Page.m; sourceTree = "<group>"; };
 		8D51A30615175F010042955F /* PageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageManager.h; path = pages/PageManager.h; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 		8D871313151A025300EBE8C8 /* xml */ = {
 			isa = PBXGroup;
 			children = (
+				8D4DD4FB154FCFDD00807C90 /* objets.xml */,
 				8D871314151A028000EBE8C8 /* persos.xml */,
 			);
 			name = xml;
@@ -887,6 +890,7 @@
 				8D6FF589154ACBB800E8D19E /* btn_tdb_titre_bkg_3@2x.png in Resources */,
 				8D6FF58C154ACBC200E8D19E /* fond_titre_2@2x.png in Resources */,
 				8D6FF58D154ACBC200E8D19E /* fond_titre_3@2x.png in Resources */,
+				8D4DD4FC154FCFDD00807C90 /* objets.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

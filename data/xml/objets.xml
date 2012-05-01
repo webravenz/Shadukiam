@@ -1,0 +1,17 @@
+<objets>
+
+<objet>null</objet>
+    
+<objet>
+	<name>Statuette</name>
+	<points>2</points>
+	<pointsB>4</pointsB>
+</objet>
+
+<objet>
+	<name>Casque guerrier</name>
+	<points>3</points>
+	<pointsB>5</pointsB>
+</objet>
+
+</objets>

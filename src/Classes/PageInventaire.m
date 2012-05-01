@@ -14,10 +14,22 @@
     
     [super show];
     
+    // test, a enlever
+    [InfosJoueur addObjet:1];
+    [InfosJoueur addObjet:2];
+    [InfosJoueur addObjet:2];
+    
     titre = [[Titre alloc] initWithText:@"INVENTAIRE"];
     [self addChild:titre];
     titre.x = 120;
     titre.y = 3;
+    
+    NSMutableArray *objets = [InfosJoueur getObjets];
+    int nbCols = [objets count] / 2;
+    if([objets count] % 2 == 1) nbCols++;
+    
+    objetsIcones = [[Slider alloc] initWithWidth:nbCols * 95 + 100 height:[Game stageHeight]];
+    [self addChild:objetsIcones];
     
     backBtn = [SPImage imageWithContentsOfFile:@"retourne.png"];
     [self addChild:backBtn];
@@ -26,15 +38,7 @@
     
     [backBtn addEventListener:@selector(onTouchBack:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
     
-    objetsIcones = [SPSprite sprite];
-    [self addChild:objetsIcones];
-    
-    // test, a enlever
-    [InfosJoueur addObjet:1];
-    [InfosJoueur addObjet:2];
-    
     // affichage des objets
-    NSMutableArray *objets = [InfosJoueur getObjets];
     NSEnumerator *enumerator = [objets objectEnumerator];
     NSNumber *objetID;
     int i = 0;
@@ -43,8 +47,8 @@
         
         ObjetMini *objetIcone = [[ObjetMini alloc] initWithObjetID:[objetID intValue]];
         [objetsIcones addChild:objetIcone];
-        objetIcone.x = (i % 4) * 95 + 70;
-        objetIcone.y = 70 + round(i / 4) * 100;
+        objetIcone.x = (i % nbCols) * 95 + 70;
+        objetIcone.y = 70 + floor(i / nbCols) * 100;
         
         [objetIcone addEventListener:@selector(onTouchObjet:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
         
@@ -55,6 +59,12 @@
     // init masque background
     backgroundMask = [[SPQuad alloc] initWithWidth:[Game stageWidth] height:[Game stageHeight] color:0x000000];
     backgroundMask.alpha = 0;
+    
+    // ini infos XML
+    
+    NSData *xmlData = [NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"objets" ofType:@"xml"]];
+    NSError *error = nil;
+    infosXML = [XMLReader dictionaryForXMLData:xmlData error:&error];
     
     
     
@@ -152,7 +162,7 @@
     
     // init fiche
     objetActive = [[FicheObjet alloc] init ];
-    [objetActive initWithID:numObjet];
+    [objetActive initWithID:numObjet andXML:[infosXML retrieveForPath:[NSString stringWithFormat:@"objets.objet.%d", numObjet]]];
     
     objetActive.x = ([Game stageWidth] - objetActive.width) / 2 + 17;
     objetActive.y = ([Game stageHeight] - objetActive.height) / 2 + 45;
@@ -228,6 +238,8 @@
     
     [self removeChild:objetsIcones];
     objetsIcones = nil;
+    
+    infosXML = nil;
 }
 
 @end

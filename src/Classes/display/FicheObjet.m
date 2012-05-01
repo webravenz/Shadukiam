@@ -12,11 +12,13 @@
 
 @synthesize objetID;
 
-- (void) initWithID:(int)ID {
+- (void) initWithID:(int)ID andXML:(NSDictionary *)objetXML {
     
     objetID = ID;
     
     isFront = YES;
+    
+    infosXML = objetXML;
     
     // general : background / boutons
     general = [SPSprite sprite];
@@ -60,6 +62,15 @@
     [back addChild:nomBack];
     nomBack.x = (background.width - nomBack.width) / 2;
     nomBack.y = 30;
+    
+    description = [SPTextField textFieldWithWidth:220 height:150 
+                                             text:[NSString stringWithFormat:@"POINTS : %@\nPOINTS SPECIAUX : %@", [infosXML objectForKey:@"points"], [infosXML objectForKey:@"pointsB"]]];
+    description.x = (background.width - description.width) / 2;
+    description.y = 70;
+    description.fontName = @"Times new Roman";
+    description.fontSize = 14;
+    description.color = 0xFFFFFF;
+    [back addChild:description];
     
     // listeners
     [retourneBtn addEventListener:@selector(onTouchRetourne:) atObject:self forType:SP_EVENT_TYPE_TOUCH];

@@ -11,15 +11,18 @@
 #import "PageManager.h"
 #import "ObjetMini.h"
 #import "FicheObjet.h"
+#import "XMLReader.h"
+#import "Slider.h"
 
 @interface PageInventaire : Page {
     
     Titre *titre;
     SPImage *backBtn;
-    SPSprite *objetsIcones;
+    Slider *objetsIcones;
     NSString *targetPage;
     SPQuad *backgroundMask;
     FicheObjet *objetActive;
+    NSDictionary *infosXML;
     
 }
 

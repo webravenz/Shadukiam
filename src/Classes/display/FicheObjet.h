@@ -21,6 +21,8 @@
     SPImage *retourneBtn;
     SPImage *nomBack;
     SPImage *okBtn;
+    NSDictionary *infosXML;
+    SPTextField *description;
     
     bool isFront;
     int objetID;
@@ -29,6 +31,6 @@
 
 @property int objetID;
 
-- (void) initWithID:(int)ID;
+- (void) initWithID:(int)ID andXML:(NSDictionary*) objetXML;
 
 @end
