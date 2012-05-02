@@ -11,6 +11,7 @@
 @implementation InfosPartie
 
 static NSMutableDictionary *joueurs = nil;
+static int phase = 1;
 
 +(void) initialize {
     joueurs = [NSMutableDictionary dictionary];

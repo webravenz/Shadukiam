@@ -56,6 +56,13 @@
     btnIntuition.y = 165;
     [buttons addChild:btnIntuition];
     
+    btnLancer = [[TDBBtn alloc] initWithText:@"LANCER"];
+    btnLancer.x = 340;
+    btnLancer.y = 255;
+    [buttons addChild:btnLancer];
+    btnLancer.name = @"PageDice";
+    [btnLancer addEventListener:@selector(onTouchBtn:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+    
     // anim
     titre.alpha = 0;
     titre.y = -20;
