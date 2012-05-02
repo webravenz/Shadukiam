@@ -13,6 +13,7 @@
     
     SPQuad *playBtn;
     bool connected;
+    SPTextField *textInfos;
     
 }
 

@@ -12,6 +12,7 @@
 
 static int myPerso = 0;
 static NSMutableArray* objets = nil;
+static int currentCase = 1;
 
 +(void) initialize {
     objets = [NSMutableArray array];
@@ -23,6 +24,14 @@ static NSMutableArray* objets = nil;
 
 + (int) getMyPerso {
     return myPerso;
+}
+
++ (void) setCurrentCase:(int)numCase {
+    currentCase = numCase;
+}
+
++ (int) getCurrentCase {
+    return currentCase;
 }
 
 + (void) addObjet:(int) objetID {

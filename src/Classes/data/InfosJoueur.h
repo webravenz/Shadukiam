@@ -14,5 +14,7 @@
 + (int) getMyPerso;
 + (void) addObjet:(int) objetID;
 + (NSMutableArray*) getObjets;
++ (void) setCurrentCase:(int)numCase;
++ (int) getCurrentCase;
 
 @end

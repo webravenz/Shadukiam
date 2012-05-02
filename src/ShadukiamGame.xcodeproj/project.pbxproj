@@ -12,6 +12,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		8D2C7C2815511DC10055D0CD /* PageMove.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C7C2715511DC10055D0CD /* PageMove.m */; };
+		8D2C7C2B155124750055D0CD /* Plateau.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C7C2A155124750055D0CD /* Plateau.m */; };
+		8D2C7C2D15512A4A0055D0CD /* plateau.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8D2C7C2C15512A4A0055D0CD /* plateau.xml */; };
 		8D4DD4FC154FCFDD00807C90 /* objets.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8D4DD4FB154FCFDD00807C90 /* objets.xml */; };
 		8D51A30515175ECE0042955F /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A30415175ECE0042955F /* Page.m */; };
 		8D51A30815175F010042955F /* PageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51A30715175F010042955F /* PageManager.m */; };
@@ -165,6 +168,11 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D2C7C2615511DC10055D0CD /* PageMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageMove.h; path = pages/PageMove.h; sourceTree = "<group>"; };
+		8D2C7C2715511DC10055D0CD /* PageMove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageMove.m; path = pages/PageMove.m; sourceTree = "<group>"; };
+		8D2C7C29155124750055D0CD /* Plateau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plateau.h; path = data/Plateau.h; sourceTree = "<group>"; };
+		8D2C7C2A155124750055D0CD /* Plateau.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Plateau.m; path = data/Plateau.m; sourceTree = "<group>"; };
+		8D2C7C2C15512A4A0055D0CD /* plateau.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = plateau.xml; path = ../data/xml/plateau.xml; sourceTree = "<group>"; };
 		8D4DD4FB154FCFDD00807C90 /* objets.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = objets.xml; path = ../data/xml/objets.xml; sourceTree = "<group>"; };
 		8D51A30315175ECE0042955F /* Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Page.h; path = pages/Page.h; sourceTree = "<group>"; };
 		8D51A30415175ECE0042955F /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Page.m; path = pages/Page.m; sourceTree = "<group>"; };
@@ -424,6 +432,8 @@
 				8D90787F1539C37100E88B5C /* PagePlay.m */,
 				8D907886153A115200E88B5C /* PageTDB.h */,
 				8D907887153A115300E88B5C /* PageTDB.m */,
+				8D2C7C2615511DC10055D0CD /* PageMove.h */,
+				8D2C7C2715511DC10055D0CD /* PageMove.m */,
 			);
 			name = Pages;
 			sourceTree = "<group>";
@@ -518,6 +528,8 @@
 				8D6FF546154AB0E100E8D19E /* InfosPartie.m */,
 				8D6FF548154ABC1300E8D19E /* InfosJoueur.h */,
 				8D6FF549154ABC1300E8D19E /* InfosJoueur.m */,
+				8D2C7C29155124750055D0CD /* Plateau.h */,
+				8D2C7C2A155124750055D0CD /* Plateau.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -533,6 +545,7 @@
 		8D871313151A025300EBE8C8 /* xml */ = {
 			isa = PBXGroup;
 			children = (
+				8D2C7C2C15512A4A0055D0CD /* plateau.xml */,
 				8D4DD4FB154FCFDD00807C90 /* objets.xml */,
 				8D871314151A028000EBE8C8 /* persos.xml */,
 			);
@@ -891,6 +904,7 @@
 				8D6FF58C154ACBC200E8D19E /* fond_titre_2@2x.png in Resources */,
 				8D6FF58D154ACBC200E8D19E /* fond_titre_3@2x.png in Resources */,
 				8D4DD4FC154FCFDD00807C90 /* objets.xml in Resources */,
+				8D2C7C2D15512A4A0055D0CD /* plateau.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,6 +943,8 @@
 				8D6FF590154ACE7700E8D19E /* TDBBtn.m in Sources */,
 				8D538203154BEF1C0039A29B /* ObjetMini.m in Sources */,
 				8D538206154C42AA0039A29B /* FicheObjet.m in Sources */,
+				8D2C7C2815511DC10055D0CD /* PageMove.m in Sources */,
+				8D2C7C2B155124750055D0CD /* Plateau.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
