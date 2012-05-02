@@ -30,7 +30,7 @@
     sliderPersos.y = 40;
     
     // init fiches
-    for(int i = 1; i < 4; i++) {
+    for(int i = 1; i < 8; i++) {
         SPImage *ficheMini = [SPImage imageWithContentsOfFile:[NSString stringWithFormat:@"ficheperso_mini_%d.png", i]];
         [sliderPersos addChild:ficheMini];
         ficheMini.x = (i * 210) - 170;
