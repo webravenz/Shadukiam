@@ -21,8 +21,6 @@
     TDBBtn *btnEnigme;
     TDBBtn *btnMessagerie;
     TDBBtn *btnIntuition;
-    
-    TDBBtn *btnLancer;
     SPSprite *buttons;
     NSString *targetPage;
     

@@ -75,14 +75,10 @@ static int stageHeight;
     [self addChild:[PageManager getInstance]];
     [PageManager getInstance].x = xOrigin;
     [PageManager getInstance].y = yOrigin;
-    //[[PageManager getInstance] changePage:@"PagePlay"];
+    [[PageManager getInstance] changePage:@"PagePlay"];
     // test TDB
     //[InfosJoueur setMyPerso:3];
-<<<<<<< HEAD
     //[[PageManager getInstance] changePage:@"PageMove"];
-=======
-    [[PageManager getInstance] changePage:@"PageDice"];
->>>>>>> mise en place de la page dé
     
     // menu
     [self addChild:[Menu getInstance]];
